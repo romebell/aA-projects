@@ -31,7 +31,7 @@ class Questions
     
     return nil unless questions.length > 0
 
-    Questions.new(questions.first) # 
+    Questions.new(questions.first) 
   end
 
   def self.find_by_author_id(author_id)
@@ -45,14 +45,17 @@ class Questions
     SQL
   end
 
-  attr_accessor :id
+  attr_accessor :id, :title, :body, :author_id
 
   def initialize(options)
    @id = options['id']
+   @title = options['title']
+   @body = options['body']
+   @author_id = options['author_id']
   end
 
   def author
-    Questions.find_by_id(@id) 
+    User.find_by_id(@author_id) 
   end
 
   def replies

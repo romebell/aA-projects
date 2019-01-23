@@ -27,8 +27,10 @@ class User
     
     return nil unless users.length > 0
 
-    Questions.new(users.first) # 
+    User.new(users.first) # 
   end
+
+  attr_accessor :id, :fname, :lname
 
   def initialize(options)
     @id = options['id']
@@ -37,9 +39,17 @@ class User
   end
 
   def authored_questions
+     authored_questions = QuestionsDBConnection.instance.execute(<<-SQL, @id)
+      SELECT
+        title, body
+      FROM
+        questions
+      WHERE
+        author_id = ?
+    SQL
   end
 
-  def quthored_replies
+  def authored_replies
   end
 
 end

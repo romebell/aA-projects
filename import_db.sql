@@ -66,3 +66,11 @@ VALUES
   ('Where''s pizza?', 'Hungry student needs pizza', 2),
   ('Where''s assessment?', 'Student is ready for test', 3),
   ('Where''s computer?', 'Students needs laptop', 1);
+
+INSERT INTO
+  replies (question_id, author_id, body)
+VALUES 
+  (1, 2, 'Pizza is coming ... tomorrow ... maybe.'),
+  (2, 3, 'A03 is on Monday ... maybe.'),
+  (3, 1, 'In front of you ... I think.'),
+  (3, 1, 'recursion ... I think.');
