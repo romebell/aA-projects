@@ -3,7 +3,7 @@ class AttrAccessorObject
     # ...
     names.each do |name|
       define_method(name) do
-        self.instance_variable_get("@#{name}")
+        self.instance_variable_get(:@name)
       end
       
       define_method("#{name}=") do |val|
