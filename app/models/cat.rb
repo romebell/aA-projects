@@ -9,6 +9,11 @@ class Cat < ApplicationRecord
     validates :sex , presence: true
     validates :description , presence: true
 
+    has_many :cat_rental_requests, :dependent :destroy,
+      primary_key: :id,
+      foreign_key: :cat_id,
+      class_name: :CatRentalRequest 
+
     def age
       now = Time.now.utc.to_date
       if birth_date
