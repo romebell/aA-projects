@@ -1,0 +1,46 @@
+<ul>
+  <li>name:
+    <%= cat.name %>
+  </li>
+  <% if action == :show %>
+    <li>birth_date:
+      <%= cat.birth_date %>
+    </li>
+    <li>age:
+      <%= cat.age %>
+    </li>
+    <li>sex:
+      <%= cat.sex %>
+    </li>
+    <li>color:
+      <%= cat.color %>
+    </li>
+    <li>description:
+      <%= cat.description %>
+    </li>
+    <table>
+    <thead>
+        <tr>
+            <th colspan="2">Cats table</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= cat.name %></td>
+            <td><%= cat.birth_date %></td>
+            <td><%= cat.age %></td>
+            <td><%= cat.sex %></td>
+            <td><%= cat.color %></td>
+            <td><%= cat.description %></td>
+        </tr>
+    </tbody>
+</table>
+    <% end %>
+    <% if action == :index %>
+    <a href="<%= cat_url(cat) %>">show me this cat</a>
+  <% elsif action == :show %>
+    <a href="<%= cats_url %>">show me ALL the cats!</a>
+  <% end %>
+  <br>
+  <a href="<%= edit_cat_url(cat) %>">Change me!</a>
+</ul>

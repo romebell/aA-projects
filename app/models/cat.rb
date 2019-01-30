@@ -1,12 +1,18 @@
 class Cat < ApplicationRecord
-  validates :color, inclusion: { in: %w(white black red blue orange green),
-    message: "%{value} is not a valid color" }
-  validates :sex, inclusion: { in: %w(M F),
-    message: "%{value} is not a valid sex" }
-
+    validates :color, inclusion: { in: %w(White Black Red Blue Orange Green),
+      message: "%{value} is not a valid color" }
+    validates :sex, inclusion: { in: %w(M F),
+      message: "%{value} is not a valid sex" }
+    validates :color , presence: true
+    validates :birth_date , presence: true
+    validates :name , presence: true
+    validates :sex , presence: true
+    validates :description , presence: true
 
     def age
       now = Time.now.utc.to_date
-      now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
+      if birth_date
+        now.year - birth_date.year - ((now.month > birth_date.month || (now.month == birth_date.month && now.day >= birth_date.day)) ? 0 : 1)
+      end
     end
 end

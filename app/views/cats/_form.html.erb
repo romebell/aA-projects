@@ -1,0 +1,51 @@
+<% if type == :new %>
+  <% action_url = cats_url %>
+  <% button_text = "Create Cat" %>
+<% elsif type == :edit %>
+  <% action_url = cat_url(cat) %>
+  <% button_text = "Change Cat" %>
+<% end %>
+
+<form action="<%= action_url %>" method="post">
+  <% if type == :edit  %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <label for="name">Name: </label>
+  <input type="text" id="name" name="cat[name]" value="<%= cat.name %>">
+  <br>
+  <br>
+  <label>Sex</label>
+ 
+    <!-- note that both radio buttons have the name `cat[sex]`; that's how
+         they are related -->
+    <input name="cat[sex]" id="cat_sex_m" type="radio" value="M">
+    <label for="cat_sex_m">Male</label>
+    <input name="cat[sex]" id="cat_sex_f" type="radio" value="F">
+    <label for="cat_sex_f">Female</label>
+   <br>
+   <br>
+   <br>
+  <label for="cat_coat_color">Coat color</label>
+  <select name="cat[color]" id="cat_coat_color"> 
+      <option value="Black">Black</option>
+      <option value="Red">Red</option>
+      <option value="Blue">Blue</option>
+      <option value="Green">Green</option>
+      <option value="Orange">Orange</option>
+   <option value="White">White</option>
+   </select>
+  <br>
+  <br>
+  <br>
+  <label for="birth_date">Birth date:
+    <input type="date" name="cat[birth_date]" value="<%= cat.birth_date %>">
+  </label>
+  <br>
+  <br>
+  <br>
+   <label for="description">Description:
+    <textarea name="cat[description]" value="<%= cat.description %>"></textarea>
+  </label>
+  <br><br><br>
+  <input type="submit" value="<%= button_text %>">
+</form>
