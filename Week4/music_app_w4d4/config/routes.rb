@@ -20,7 +20,7 @@ bueller_index GET    /bueller(.:format)          user#index
               DELETE /bueller/:id(.:format)      user#destroy
 =end
 
-  resources :users, only: [:new, :edit, :show]
+  resources :users, only: [:new, :create, :show]
 
   resource :session, only: [:new, :create, :destroy]
 end
