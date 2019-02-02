@@ -1,11 +1,13 @@
 class SessionsController < ApplicationController
+    before_action :require_logout, only: [:new, :create]
     def new
        render :new
     end
 
     def create
-      user = User.find_by(params[:user][:username])
-      params[:user][:password]
+      email = params[:user][:email]
+      pw = params[:user][:password]
+      user = User.find_by(email, pw)
 
       if user
         login!(user)
@@ -13,7 +15,7 @@ class SessionsController < ApplicationController
       else
         flash.now[:errors] = ["Invalid credentials"]
         render :new
-    end
+      end
     end
 
     def destroy
