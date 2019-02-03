@@ -84,3 +84,4 @@ NameError - uninitialized constant UsersController:
 
 Started POST "/__better_errors/4d239b471806d0dc/variables" for 127.0.0.1 at 2019-01-31 16:38:30 -0800
 Started POST "/__better_errors/4d239b471806d0dc/variables" for 127.0.0.1 at 2019-01-31 16:38:37 -0800
+  [1m[36mUser Load (92.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
