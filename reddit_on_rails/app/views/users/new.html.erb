@@ -13,9 +13,7 @@
 </ul>
 
 <form action="<%= users_url %>" method="post">
-  <input type="hidden"
-  name="authenticity_token"
-  value="<%= form_authenticity_token %>">
+  <%= auth_token %>
 
   <label for="username">Username</label>
   <input id="username" type="text" name="user[username]" value="">
