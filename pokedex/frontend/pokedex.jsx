@@ -5,13 +5,14 @@ import { RECEIVE_ALL_POKEMON, receiveAllPokemon } from './actions/pokemon_action
 import {configureStore} from './store/store';
 import {requestAllPokemon} from './actions/pokemon_actions';
 import selectAllPokemon from './reducers/selectors';
+import Root from './components/root';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
   const store = configureStore();
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  ReactDOM.render(<h1>POKEMON</h1>, root)
+  ReactDOM.render(<Root store={store}/>, root)
 });
 
 // TESTING
