@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {HashRouter, Route} from 'react-router-dom';
 import * as APIUtil from './util/api_util';
-import { RECEIVE_ALL_POKEMON, receiveAllPokemon } from './actions/pokemon_actions'
+// import { RECEIVE_ALL_POKEMON, receiveAllPokemon } from './actions/pokemon_actions'
 import {configureStore} from './store/store';
-import {requestAllPokemon} from './actions/pokemon_actions';
-import selectAllPokemon from './reducers/selectors';
+import {requestOnePokemon} from './actions/pokemon_actions';
+// import selectAllPokemon from './reducers/selectors'; 
 import Root from './components/root';
+import { RECEIVE_ONE_POKEMON, receiveOnePokemon } from './actions/pokemon_actions'
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
@@ -16,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // TESTING
-window.configureStore = configureStore;
-window.receiveAllPokemon = receiveAllPokemon;
-window.requestAllPokemon = requestAllPokemon;
-window.fetchAllPokemon = APIUtil.fetchAllPokemon;
-window.selectAllPokemon = selectAllPokemon;
+// window.configureStore = configureStore;
+window.receiveOnePokemon = receiveOnePokemon;
+window.requestOnePokemon = requestOnePokemon;
+window.fetchOnePokemon = APIUtil.fetchOnePokemon;
+// window.selectAllPokemon = selectAllPokemon;
