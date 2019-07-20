@@ -1,0 +1,23 @@
+Started GET "/" for 127.0.0.1 at 2019-02-25 11:41:04 -0800
+
+PG::ConnectionBad - FATAL:  database "bench_bnb_w8d1_development" does not exist
+:
+
+Started POST "/__better_errors/629a60dcd56aaf66/variables" for 127.0.0.1 at 2019-02-25 11:41:04 -0800
+Started GET "/" for 127.0.0.1 at 2019-02-25 11:41:20 -0800
+
+PG::ConnectionBad - FATAL:  database "bench_bnb_w8d1_development" does not exist
+:
+
+Started POST "/__better_errors/2e08ec09ad0eb327/variables" for 127.0.0.1 at 2019-02-25 11:41:21 -0800
+  [1m[35m (580.1ms)[0m  [1m[35mCREATE DATABASE "bench_bnb_w8d1_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (418.1ms)[0m  [1m[35mCREATE DATABASE "bench_bnb_w8d1_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-02-25 11:43:58 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (2.4ms)
+Completed 200 OK in 1718ms (Views: 1713.0ms | ActiveRecord: 0.0ms)
+
+
